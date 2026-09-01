@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" width="1080" height="1920" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="18%" r="75%">
+      <stop offset="0%" stop-color="#3a2c0b"/>
+      <stop offset="55%" stop-color="#0e0e12"/>
+    </radialGradient>
+  </defs>
+  <rect width="1080" height="1920" fill="url(#g)"/>
+
+  <!-- 심벌 -->
+  <g transform="translate(440 300) scale(2)">
+    <path d="M50 8c23.2 0 42 16.1 42 36 0 19.9-18.8 36-42 36-4.4 0-8.7-.6-12.6-1.6L18 92l4.4-19.2C13.7 66.2 8 55.7 8 44 8 24.1 26.8 8 50 8Z" fill="none" stroke="#f6f2e9" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M30 40c3.2 4 8.8 4 12 0" fill="none" stroke="#f6f2e9" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="64" cy="40" r="4.5" fill="#ffb627"/>
+    <path d="M64 48c-3 5-5 8-5 11a5 5 0 0 0 10 0c0-3-2-6-5-11Z" fill="#ffb627"/>
+    <path d="M40 60c6 3.5 14 3.5 20 0" fill="none" stroke="#f6f2e9" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <text x="540" y="900" text-anchor="middle" fill="#f6f2e9" font-size="96" font-weight="800">말 없이,</text>
+  <text x="540" y="1010" text-anchor="middle" fill="#ffb627" font-size="96" font-weight="800">세계와 통하다</text>
+
+  <text x="540" y="1120" text-anchor="middle" fill="#f6f2e9" opacity="0.55" font-size="34" letter-spacing="6">WHERE SILENCE SPEAKS</text>
+
+  <g stroke="#f6f2e9" opacity="0.25" stroke-width="2">
+    <line x1="300" y1="1180" x2="780" y2="1180"/>
+  </g>
+
+  <text x="540" y="1260" text-anchor="middle" fill="#f6f2e9" font-size="40" font-weight="700">2026. 5. 24 – 5. 31</text>
+  <text x="540" y="1315" text-anchor="middle" fill="#f6f2e9" opacity="0.6" font-size="30">강원특별자치도 춘천시 일원</text>
+
+  <text x="540" y="1560" text-anchor="middle" fill="#ff5a5f" font-size="120" font-weight="800" letter-spacing="8">SEE YOU IN MAY</text>
+
+  <!-- 별 모티프 -->
+  <g fill="none" stroke="#ffb627" stroke-width="4" stroke-linejoin="round" opacity="0.8">
+    <path d="M170 260l14 40h42l-34 26 13 42-35-26-35 26 13-42-34-26h42z"/>
+  </g>
+  <g fill="none" stroke="#1e6f8e" stroke-width="4" stroke-linejoin="round" opacity="0.8">
+    <path d="M900 1650l14 40h42l-34 26 13 42-35-26-35 26 13-42-34-26h42z"/>
+  </g>
+</svg>

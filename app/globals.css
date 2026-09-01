@@ -1,26 +1,111 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ------------------------------------------------------------------ */
+/*  2026 춘천마임축제 — 디자인 토큰                                     */
+/* ------------------------------------------------------------------ */
+@theme {
+  --color-ink: #0e0e12;
+  --color-ink-soft: #1a1a22;
+  --color-paper: #f6f2e9;
+  --color-paper-dim: #e9e3d3;
+  --color-amber: #ffb627;
+  --color-lake: #1e6f8e;
+  --color-coral: #ff5a5f;
+
+  --font-sans: var(--font-noto), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-anton), var(--font-noto), sans-serif;
+
+  --animate-marquee: marquee 32s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-drift: drift 22s linear infinite;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }
 
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(1.5deg);
+  }
+}
+
+@keyframes drift {
+  from {
+    transform: translateX(-8%);
+  }
+  to {
+    transform: translateX(8%);
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-amber);
+  color: var(--color-ink);
+}
+
+/* 스크롤 등장 애니메이션 (동작 줄이기 설정 존중) */
+.reveal {
+  animation: reveal-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 32%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal,
+  .animate-marquee,
+  .animate-float,
+  .animate-drift {
+    animation: none !important;
+  }
+}
+
+/* 디스플레이 헤드라인용 유틸 */
+.text-stroke {
+  -webkit-text-stroke: 1.5px var(--color-paper);
+  color: transparent;
+}
+
+.dotted-rule {
+  background-image: radial-gradient(currentColor 1px, transparent 1.4px);
+  background-size: 10px 10px;
 }
