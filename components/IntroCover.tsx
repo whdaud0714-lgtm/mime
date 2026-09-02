@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useId, useState } from "react";
+import coverPoster from "@/photo/1.png";
 import { InlineScript } from "@/components/InlineScript";
 import { useClientValue } from "@/lib/use-client-value";
 import { festival } from "@/lib/festival";
-import { photos } from "@/lib/photos";
 
 /** 세션당 한 번만 노출 — 넘어간 뒤에는 홈으로 다시 와도 표지를 띄우지 않는다. */
 const SEEN_KEY = "mime:intro-seen";
@@ -106,11 +106,11 @@ export function IntroCover() {
 					<span>{festival.periodEn}</span>
 				</p>
 
-				<div className="mt-6 w-[74vw] max-w-[18rem] rotate-1 overflow-hidden rounded-2xl border border-paper/15 shadow-[0_28px_70px_rgba(0,0,0,0.55)]">
+				<div className="mt-6 w-[86vw] max-w-lg rotate-1 overflow-hidden rounded-2xl border border-paper/15 shadow-[0_28px_70px_rgba(0,0,0,0.55)]">
 					<Image
-						src={photos.keyVisual.img}
-						alt={photos.keyVisual.alt}
-						sizes="(min-width: 640px) 18rem, 74vw"
+						src={coverPoster}
+						alt="2026 춘천마임축제 포스터"
+						sizes="(min-width: 640px) 32rem, 86vw"
 						placeholder="blur"
 						priority
 						className="h-auto w-full"
