@@ -52,24 +52,24 @@ export default function VisitPage() {
               {festival.venues.map((v, i) => (
                 <li
                   key={v.ko}
-                  className="reveal flex items-start gap-4 rounded-xl border border-paper/12 bg-ink-soft/40 p-4"
+                  className="reveal flex items-start gap-4 rounded-xl border border-ink/12 bg-card p-4"
                 >
                   <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber font-display text-sm text-ink">
                     {i + 1}
                   </span>
                   <div>
                     <p className="font-bold">{v.ko}</p>
-                    <p className="text-xs text-paper/45">{v.en}</p>
-                    <p className="mt-1 text-sm text-paper/65">{v.role}</p>
+                    <p className="text-xs text-ink/45">{v.en}</p>
+                    <p className="mt-1 text-sm text-ink/65">{v.role}</p>
                   </div>
                 </li>
               ))}
             </ul>
 
             {/* 추상 배치도 */}
-            <div className="reveal rounded-2xl border border-paper/12 bg-ink p-6">
+            <div className="reveal rounded-2xl border border-ink/12 bg-base p-6">
               <VenueMap className="w-full" />
-              <p className="mt-2 text-xs text-paper/40">
+              <p className="mt-2 text-xs text-ink/40">
                 * 실제 축제장 위치는 조직위 공식 지도를 확인하세요.
               </p>
             </div>
@@ -77,14 +77,14 @@ export default function VisitPage() {
         </Container>
       </section>
 
-      <section className="border-y border-paper/10 bg-ink-soft/25 py-16">
+      <section className="border-y border-ink/10 bg-card/70 py-16">
         <Container>
           <SectionHeading kicker="Getting here" title="교통" />
           <ul className="mt-10 grid gap-5 md:grid-cols-2">
             {TRANSPORT.map((x) => (
-              <li key={x.m} className="reveal rounded-xl border border-paper/12 bg-ink p-5">
+              <li key={x.m} className="reveal rounded-xl border border-ink/12 bg-base p-5">
                 <h3 className="font-bold text-amber">{x.m}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-paper/70">{x.d}</p>
+                <p className="mt-1.5 text-sm leading-relaxed text-ink/70">{x.d}</p>
               </li>
             ))}
           </ul>
@@ -97,7 +97,7 @@ export default function VisitPage() {
           <div className="mt-10 overflow-x-auto">
             <table className="w-full min-w-[520px] border-collapse text-sm">
               <thead>
-                <tr className="border-b border-paper/20 text-left text-paper/50">
+                <tr className="border-b border-ink/20 text-left text-ink/50">
                   <th className="py-3 pr-4 font-medium">구분</th>
                   <th className="py-3 pr-4 font-medium">가격</th>
                   <th className="py-3 font-medium">비고</th>
@@ -105,26 +105,26 @@ export default function VisitPage() {
               </thead>
               <tbody>
                 {TICKETS.map((t) => (
-                  <tr key={t.t} className="border-b border-paper/10">
+                  <tr key={t.t} className="border-b border-ink/10">
                     <td className="py-3.5 pr-4 font-bold">{t.t}</td>
                     <td className="py-3.5 pr-4 text-amber">{t.p}</td>
-                    <td className="py-3.5 text-paper/65">{t.n}</td>
+                    <td className="py-3.5 text-ink/65">{t.n}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className="mt-4 text-xs text-paper/45">
+          <p className="mt-4 text-xs text-ink/45">
             예매: 축제 공식 홈페이지 및 주요 예매처 · 가격은 예시입니다.
           </p>
         </Container>
       </section>
 
-      <section className="border-t border-paper/10 py-16">
+      <section className="border-t border-ink/10 py-16">
         <Container className="grid gap-8 md:grid-cols-2">
           <div>
             <h3 className="font-display text-lg text-amber">문의</h3>
-            <p className="mt-3 text-sm text-paper/70">
+            <p className="mt-3 text-sm text-ink/70">
               {festival.organizerKo}
               <br />
               {festival.contactEmail} · {festival.phone}
@@ -132,7 +132,7 @@ export default function VisitPage() {
           </div>
           <div>
             <h3 className="font-display text-lg text-amber">숙박</h3>
-            <p className="mt-3 text-sm text-paper/70">
+            <p className="mt-3 text-sm text-ink/70">
               명동·석사동 일대 호텔·게스트하우스 도보 15분 내. 축제 기간 조기
               마감되니 미리 예약하세요.
             </p>

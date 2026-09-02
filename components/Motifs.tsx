@@ -81,8 +81,8 @@ export function MotifField({ className }: IconProps) {
       <IconBalloon className="animate-float absolute left-[6%] top-[12%] h-16 w-16 text-lake/40" />
       <IconMask className="animate-float absolute right-[8%] top-[18%] h-20 w-20 text-amber/30 [animation-delay:1.5s]" />
       <IconStar className="absolute left-[14%] bottom-[16%] h-10 w-10 text-coral/40" />
-      <IconSpotlight className="animate-float absolute right-[16%] bottom-[10%] h-16 w-16 text-paper/15 [animation-delay:3s]" />
-      <IconHat className="absolute left-[42%] top-[8%] h-12 w-12 text-paper/10" />
+      <IconSpotlight className="animate-float absolute right-[16%] bottom-[10%] h-16 w-16 text-ink/15 [animation-delay:3s]" />
+      <IconHat className="absolute left-[42%] top-[8%] h-12 w-12 text-ink/10" />
     </div>
   );
 }

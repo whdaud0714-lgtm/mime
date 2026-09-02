@@ -5,11 +5,11 @@ import { festival } from "@/lib/festival";
 
 export function SiteFooter() {
   return (
-    <footer className="mt-24 border-t border-paper/10 bg-ink-soft/40">
+    <footer className="mt-24 border-t border-ink/10 bg-card">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <Signature className="text-xl text-paper" />
-          <p className="mt-4 max-w-sm text-sm text-paper/60">
+          <Signature className="text-xl text-ink" />
+          <p className="mt-4 max-w-sm text-sm text-ink/60">
             {festival.taglineKo}
             <br />
             {festival.taglineEn}
@@ -19,7 +19,7 @@ export function SiteFooter() {
 
         <div className="text-sm">
           <h4 className="font-display text-amber">바로가기</h4>
-          <ul className="mt-3 space-y-2 text-paper/70">
+          <ul className="mt-3 space-y-2 text-ink/70">
             <li><Link href="/about" className="hover:text-amber">축제 소개</Link></li>
             <li><Link href="/program" className="hover:text-amber">프로그램</Link></li>
             <li><Link href="/visit" className="hover:text-amber">방문 안내</Link></li>
@@ -31,7 +31,7 @@ export function SiteFooter() {
 
         <div className="text-sm">
           <h4 className="font-display text-amber">주최·주관</h4>
-          <ul className="mt-3 space-y-2 text-paper/70">
+          <ul className="mt-3 space-y-2 text-ink/70">
             <li>주최 · {festival.hostKo}</li>
             <li>주관 · {festival.organizerKo}</li>
             <li>후원 · {festival.sponsorsKo.join(" / ")}</li>
@@ -41,7 +41,7 @@ export function SiteFooter() {
         </div>
       </div>
 
-      <div className="border-t border-paper/10 px-5 py-5 text-center text-xs leading-relaxed text-paper/40">
+      <div className="border-t border-ink/10 px-5 py-5 text-center text-xs leading-relaxed text-ink/40">
         © 2026 {festival.hostKo} · Chuncheon International Mime Festival.
         <br />
         본 사이트는 홍보 기획 프로젝트 산출물이며 일부 정보(주최·후원·티켓·연혁)는

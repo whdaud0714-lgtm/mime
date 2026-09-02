@@ -54,14 +54,14 @@ export const metadata: Metadata = {
   manifest: "/manifest.webmanifest",
   appleWebApp: {
     capable: true,
-    statusBarStyle: "black-translucent",
+    statusBarStyle: "default",
     title: festival.titleKo,
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0e0e12",
-  colorScheme: "dark",
+  themeColor: "#f4eee1",
+  colorScheme: "light",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -70,7 +70,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="ko"
       className={`${noto.variable} ${anton.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-ink text-paper">
+      <body className="min-h-full flex flex-col bg-base text-ink">
         {children}
         <ServiceWorkerRegister />
       </body>

@@ -40,9 +40,9 @@ export function InstallPrompt() {
   if (isStandalone) return null;
 
   return (
-    <div className="rounded-2xl border border-paper/15 bg-ink-soft/60 p-5">
+    <div className="rounded-2xl border border-ink/15 bg-card p-5">
       <h3 className="font-display text-lg text-amber">홈 화면에 추가 · Install</h3>
-      <p className="mt-1 text-sm text-paper/70">
+      <p className="mt-1 text-sm text-ink/70">
         앱처럼 전체화면으로 열리고, 오프라인에서도 프로그램표를 볼 수 있어요.
       </p>
 
@@ -59,12 +59,12 @@ export function InstallPrompt() {
           지금 설치하기
         </button>
       ) : isIOS ? (
-        <p className="mt-3 text-sm text-paper/80">
+        <p className="mt-3 text-sm text-ink/80">
           Safari 하단의 <span aria-hidden>⎋</span> <b>공유</b> 버튼을 누른 뒤{" "}
           <b>‘홈 화면에 추가’</b>를 선택하세요.
         </p>
       ) : (
-        <p className="mt-3 text-sm text-paper/60">
+        <p className="mt-3 text-sm text-ink/60">
           브라우저 메뉴에서 <b>‘앱 설치’</b> 또는 <b>‘홈 화면에 추가’</b>를 선택하세요.
         </p>
       )}

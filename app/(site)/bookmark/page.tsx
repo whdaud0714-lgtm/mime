@@ -30,7 +30,7 @@ export default async function BookmarkPage() {
       <section className="py-16">
         <Container className="grid gap-10 lg:grid-cols-[1fr_1fr]">
           {/* QR + 링크 */}
-          <div className="reveal rounded-3xl border border-paper/12 bg-ink-soft/40 p-8">
+          <div className="reveal rounded-3xl border border-ink/12 bg-card p-8">
             <h2 className="font-display text-lg uppercase tracking-[0.16em] text-amber">
               스캔하거나, 링크를 복사하세요
             </h2>
@@ -41,7 +41,7 @@ export default async function BookmarkPage() {
                 dangerouslySetInnerHTML={{ __html: qrSvg }}
               />
               <div className="min-w-0">
-                <p className="break-all rounded-lg border border-paper/15 bg-ink px-3 py-2 font-display text-sm text-paper/80">
+                <p className="break-all rounded-lg border border-ink/15 bg-base px-3 py-2 font-display text-sm text-ink/80">
                   {SITE_URL.replace(/^https?:\/\//, "")}
                 </p>
                 <div className="mt-3">
@@ -52,30 +52,30 @@ export default async function BookmarkPage() {
           </div>
 
           {/* 저장 CTA */}
-          <div className="reveal flex flex-col justify-center rounded-3xl border border-amber/40 bg-gradient-to-br from-ink-soft/70 to-ink p-8">
+          <div className="reveal flex flex-col justify-center rounded-3xl border border-amber/40 bg-gradient-to-br from-card to-base p-8">
             <h2 className="text-2xl font-black">이 축제 저장하기</h2>
-            <p className="mt-2 text-sm text-paper/70">
+            <p className="mt-2 text-sm text-ink/70">
               브라우저에 저장돼 다음에 바로 열 수 있고, 개막 전 알림을 받을 수
               있습니다. (기기에만 저장되며 서버로 전송되지 않습니다.)
             </p>
             <div className="mt-6">
               <SaveButton />
             </div>
-            <p className="mt-4 text-xs text-paper/45">
+            <p className="mt-4 text-xs text-ink/45">
               단축키로도 저장 — Windows/Linux: Ctrl+D · macOS: ⌘+D
             </p>
           </div>
         </Container>
       </section>
 
-      <section className="border-y border-paper/10 bg-ink-soft/25 py-16">
+      <section className="border-y border-ink/10 bg-card/70 py-16">
         <Container>
           <SectionHeading kicker="Install" title="앱처럼 쓰기" />
           <div className="mt-8 grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
             <InstallPrompt />
-            <div className="flex items-center gap-4 rounded-2xl border border-paper/12 bg-ink p-6">
+            <div className="flex items-center gap-4 rounded-2xl border border-ink/12 bg-base p-6">
               <Mascot className="h-28 w-24 shrink-0" wall={false} />
-              <p className="text-sm text-paper/70">
+              <p className="text-sm text-ink/70">
                 설치하면 미모(MIMO)가 홈 화면에서 기다립니다. 오프라인에서도
                 프로그램표와 오시는 길을 볼 수 있어요.
               </p>
@@ -95,13 +95,13 @@ export default async function BookmarkPage() {
             <a
               href="/ccmf-2026-wallpaper.svg"
               download
-              className="group flex items-center justify-between rounded-2xl border border-paper/12 bg-ink p-6 hover:border-amber/60"
+              className="group flex items-center justify-between rounded-2xl border border-ink/12 bg-base p-6 hover:border-amber/60"
             >
               <div>
                 <p className="font-bold group-hover:text-amber">
                   잠금화면 배경 다운로드
                 </p>
-                <p className="mt-1 text-sm text-paper/55">
+                <p className="mt-1 text-sm text-ink/55">
                   세로형 · “{festival.sloganKo}” · SVG
                 </p>
               </div>
@@ -109,9 +109,9 @@ export default async function BookmarkPage() {
                 <path d="M12 3v13m0 0l-4-4m4 4l4-4M5 21h14" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </a>
-            <div className="rounded-2xl border border-paper/12 bg-ink p-6">
+            <div className="rounded-2xl border border-ink/12 bg-base p-6">
               <p className="font-bold">복사해서 쓰는 소개 문구</p>
-              <p className="mt-2 rounded-lg bg-ink-soft/60 p-3 text-sm text-paper/75">
+              <p className="mt-2 rounded-lg bg-card p-3 text-sm text-ink/75">
                 {festival.editionKo} {festival.titleKo} ({festival.periodKo}) · {festival.placeKo}. 말이 필요 없는 몸의 언어로 즐기는 8일. 저장하고 함께 가요 → {SITE_URL.replace(/^https?:\/\//, "")}
               </p>
             </div>

@@ -32,7 +32,7 @@ export function AppTabBar() {
   const pathname = usePathname();
 
   return (
-    <nav className="sticky bottom-0 z-40 border-t border-paper/10 bg-ink/95 backdrop-blur">
+    <nav className="sticky bottom-0 z-40 border-t border-ink/10 bg-base/95 backdrop-blur">
       <ul className="mx-auto flex max-w-md">
         {TABS.map((t) => {
           const active =
@@ -42,7 +42,7 @@ export function AppTabBar() {
               <Link
                 href={t.href}
                 className={`flex flex-col items-center gap-1 py-2.5 text-[11px] ${
-                  active ? "text-amber" : "text-paper/55"
+                  active ? "text-amber" : "text-ink/55"
                 }`}
               >
                 <svg

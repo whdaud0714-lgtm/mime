@@ -12,10 +12,10 @@ export const metadata: Metadata = {
 
 export default function AppLayout({ children }: LayoutProps<"/app">) {
   return (
-    <div className="mx-auto flex min-h-dvh max-w-md flex-col bg-ink">
-      <header className="sticky top-0 z-40 flex items-center justify-between border-b border-paper/10 bg-ink/95 px-4 py-3 backdrop-blur">
+    <div className="mx-auto flex min-h-dvh max-w-md flex-col bg-base">
+      <header className="sticky top-0 z-40 flex items-center justify-between border-b border-ink/10 bg-base/95 px-4 py-3 backdrop-blur">
         <Link href="/app" className="flex items-center gap-2">
-          <MimeSymbol className="h-7 w-7 text-paper" />
+          <MimeSymbol className="h-7 w-7 text-ink" />
           <span className="text-sm font-black leading-none">
             춘천마임축제
             <span className="block font-display text-[10px] font-normal tracking-[0.14em] text-amber">
@@ -28,8 +28,8 @@ export default function AppLayout({ children }: LayoutProps<"/app">) {
 
       <main className="flex-1 px-4 py-5">{children}</main>
 
-      <div className="border-t border-paper/10 px-4 py-3 text-center">
-        <Link href="/" className="text-xs text-paper/45 hover:text-amber">
+      <div className="border-t border-ink/10 px-4 py-3 text-center">
+        <Link href="/" className="text-xs text-ink/45 hover:text-amber">
           ← 홍보 웹사이트로 돌아가기
         </Link>
       </div>

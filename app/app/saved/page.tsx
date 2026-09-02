@@ -44,7 +44,7 @@ export default function AppSaved() {
             <h2 className="mt-2 text-lg font-black">
               {festival.editionKo} {festival.titleKo}
             </h2>
-            <p className="mt-1 text-xs text-paper/55">{festival.periodKo}</p>
+            <p className="mt-1 text-xs text-ink/55">{festival.periodKo}</p>
             <div className="mt-4 flex justify-center">
               <Countdown />
             </div>
@@ -53,9 +53,9 @@ export default function AppSaved() {
             </div>
           </section>
 
-          <section className="rounded-2xl border border-paper/12 bg-ink-soft/40 p-5">
+          <section className="rounded-2xl border border-ink/12 bg-card p-5">
             <h3 className="font-bold">개막 알림</h3>
-            <p className="mt-1 text-sm text-paper/65">
+            <p className="mt-1 text-sm text-ink/65">
               {perm === "granted"
                 ? "알림이 켜져 있습니다. 개막 전에 알려드릴게요."
                 : perm === "unsupported"
@@ -73,9 +73,9 @@ export default function AppSaved() {
             )}
           </section>
 
-          <section className="rounded-2xl border border-paper/12 bg-ink-soft/40 p-5">
+          <section className="rounded-2xl border border-ink/12 bg-card p-5">
             <h3 className="font-bold">친구에게 보내기</h3>
-            <p className="mt-1 text-sm text-paper/60">
+            <p className="mt-1 text-sm text-ink/60">
               저장한 링크를 공유하면 친구도 바로 D-day를 볼 수 있어요.
             </p>
             <ShareBar className="mt-3" />
@@ -84,21 +84,21 @@ export default function AppSaved() {
           <div className="grid grid-cols-2 gap-3">
             <Link
               href="/app/schedule"
-              className="rounded-2xl border border-paper/12 bg-ink-soft/40 p-4 text-sm font-bold hover:border-amber/60"
+              className="rounded-2xl border border-ink/12 bg-card p-4 text-sm font-bold hover:border-amber/60"
             >
               프로그램표
             </Link>
             <Link
               href="/app/map"
-              className="rounded-2xl border border-paper/12 bg-ink-soft/40 p-4 text-sm font-bold hover:border-amber/60"
+              className="rounded-2xl border border-ink/12 bg-card p-4 text-sm font-bold hover:border-amber/60"
             >
               축제장 지도
             </Link>
           </div>
         </>
       ) : (
-        <section className="rounded-3xl border border-paper/12 bg-ink-soft/40 p-8 text-center">
-          <p className="text-sm text-paper/70">
+        <section className="rounded-3xl border border-ink/12 bg-card p-8 text-center">
+          <p className="text-sm text-ink/70">
             아직 저장하지 않았어요. 저장하면 여기에서 D-day와 알림을 관리할 수
             있습니다.
           </p>

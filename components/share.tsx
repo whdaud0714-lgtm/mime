@@ -54,7 +54,7 @@ export function SaveButton({ className }: { className?: string }) {
       className={`inline-flex items-center gap-2 rounded-full border px-5 py-3 text-sm font-bold transition-colors ${
         saved
           ? "border-amber bg-amber text-ink"
-          : "border-paper/25 bg-transparent text-paper hover:border-amber hover:text-amber"
+          : "border-ink/25 bg-transparent text-ink hover:border-amber hover:text-amber"
       } ${className ?? ""}`}
     >
       <svg
@@ -121,7 +121,7 @@ export function ShareBar({
       <button
         type="button"
         onClick={copy}
-        className="rounded-full border border-paper/25 px-4 py-2 text-sm font-medium hover:border-amber hover:text-amber"
+        className="rounded-full border border-ink/25 px-4 py-2 text-sm font-medium hover:border-amber hover:text-amber"
       >
         {copied ? "링크 복사됨!" : "링크 복사"}
       </button>
@@ -129,7 +129,7 @@ export function ShareBar({
         <button
           type="button"
           onClick={nativeShare}
-          className="rounded-full border border-paper/25 px-4 py-2 text-sm font-medium hover:border-amber hover:text-amber"
+          className="rounded-full border border-ink/25 px-4 py-2 text-sm font-medium hover:border-amber hover:text-amber"
         >
           공유하기
         </button>
@@ -140,7 +140,7 @@ export function ShareBar({
           href={l.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-full border border-paper/25 px-4 py-2 text-sm font-medium hover:border-amber hover:text-amber"
+          className="rounded-full border border-ink/25 px-4 py-2 text-sm font-medium hover:border-amber hover:text-amber"
         >
           {l.label}
         </a>

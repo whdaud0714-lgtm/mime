@@ -78,12 +78,12 @@ export function Countdown({ compact = false }: { compact?: boolean }) {
       {(["days", "hours", "minutes", "seconds"] as const).map((k) => (
         <li
           key={k}
-          className="flex min-w-[3.6rem] flex-col items-center rounded-xl border border-paper/15 bg-ink-soft/70 px-3 py-2"
+          className="flex min-w-[3.6rem] flex-col items-center rounded-xl border border-ink/15 bg-card px-3 py-2"
         >
-          <span className="font-display text-3xl tabular-nums leading-none text-paper sm:text-4xl">
+          <span className="font-display text-3xl tabular-nums leading-none text-ink sm:text-4xl">
             {String(p[k]).padStart(2, "0")}
           </span>
-          <span className="mt-1 text-xs text-paper/60">{LABELS[k]}</span>
+          <span className="mt-1 text-xs text-ink/60">{LABELS[k]}</span>
         </li>
       ))}
     </ul>

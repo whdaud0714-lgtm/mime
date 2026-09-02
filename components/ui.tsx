@@ -37,7 +37,7 @@ export function SectionHeading({
       <h2 className="mt-3 text-3xl font-black leading-tight tracking-tight sm:text-4xl">
         {title}
       </h2>
-      {desc && <p className="mt-4 text-base leading-relaxed text-paper/70">{desc}</p>}
+      {desc && <p className="mt-4 text-base leading-relaxed text-ink/70">{desc}</p>}
     </header>
   );
 }
@@ -52,7 +52,7 @@ export function PageHero({
   desc?: ReactNode;
 }) {
   return (
-    <section className="border-b border-paper/10 bg-ink-soft/30">
+    <section className="border-b border-ink/10 bg-card/70">
       <Container className="py-16 sm:py-20">
         <p className="font-display text-sm uppercase tracking-[0.24em] text-amber">
           {kicker}
@@ -61,7 +61,7 @@ export function PageHero({
           {title}
         </h1>
         {desc && (
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-paper/70">
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink/70">
             {desc}
           </p>
         )}

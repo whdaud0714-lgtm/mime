@@ -4,13 +4,15 @@
 /*  2026 춘천마임축제 — 디자인 토큰                                     */
 /* ------------------------------------------------------------------ */
 @theme {
-  --color-ink: #0e0e12;
-  --color-ink-soft: #1a1a22;
-  --color-paper: #f6f2e9;
-  --color-paper-dim: #e9e3d3;
-  --color-amber: #ffb627;
-  --color-lake: #1e6f8e;
-  --color-coral: #ff5a5f;
+  /* 라이트(페이퍼) 테마 — 밝은 무대 조명 아래의 마임 */
+  --color-base: #f4eee1; /* 페이지 배경 · 따뜻한 종이 */
+  --color-card: #fcf9f1; /* 카드·패널 (배경보다 밝게 떠 보이도록) */
+  --color-ink: #1c1712; /* 본문 텍스트 · 강조색 위 글자 · 어두운 칩 */
+  --color-ink-soft: #2a241d;
+  --color-paper: #fcf9f1; /* '밝은 요소' (어두운 칩 위 글자, QR 프레임) */
+  --color-amber: #a56300; /* 스포트라이트 앰버 — 밝은 배경에서도 읽히는 톤 */
+  --color-lake: #196380;
+  --color-coral: #c9333a;
 
   --font-sans: var(--font-noto), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-anton), var(--font-noto), sans-serif;
@@ -60,7 +62,7 @@
 }
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 html {
@@ -68,8 +70,8 @@ html {
 }
 
 body {
-  background: var(--color-ink);
-  color: var(--color-paper);
+  background: var(--color-base);
+  color: var(--color-ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -77,7 +79,7 @@ body {
 
 ::selection {
   background: var(--color-amber);
-  color: var(--color-ink);
+  color: var(--color-paper);
 }
 
 /* 스크롤 등장 애니메이션 (동작 줄이기 설정 존중) */
@@ -101,7 +103,7 @@ body {
 
 /* 디스플레이 헤드라인용 유틸 */
 .text-stroke {
-  -webkit-text-stroke: 1.5px var(--color-paper);
+  -webkit-text-stroke: 1.5px var(--color-ink);
   color: transparent;
 }
 

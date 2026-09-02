@@ -49,14 +49,14 @@ export default function HomePage() {
           sizes="100vw"
           className="object-cover opacity-25"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/85 to-ink" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,182,39,0.16),transparent_60%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-base/70 via-base/88 to-base" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(165,99,0,0.12),transparent_60%)]" />
         <MotifField />
         <Container className="relative grid gap-10 py-20 sm:py-28 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
           <div className="reveal">
             <p className="flex flex-wrap items-center gap-x-3 gap-y-1 font-display text-sm uppercase tracking-[0.22em] text-amber">
               <span>{festival.editionKo}</span>
-              <span aria-hidden className="text-paper/30">/</span>
+              <span aria-hidden className="text-ink/30">/</span>
               <span>{festival.periodEn}</span>
             </p>
 
@@ -65,25 +65,25 @@ export default function HomePage() {
               <br />
               <span className="text-amber">세계와</span> 통하다
             </h1>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-paper/80">
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink/80">
               {festival.taglineKo}
               <br />
-              <span className="text-paper/55">
+              <span className="text-ink/55">
                 {festival.sloganEn} — {festival.taglineEn}
               </span>
             </p>
 
             <dl className="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-sm">
               <div>
-                <dt className="text-paper/45">일시</dt>
+                <dt className="text-ink/45">일시</dt>
                 <dd className="font-medium">{festival.periodKo}</dd>
               </div>
               <div>
-                <dt className="text-paper/45">장소</dt>
+                <dt className="text-ink/45">장소</dt>
                 <dd className="font-medium">{festival.placeKo}</dd>
               </div>
               <div>
-                <dt className="text-paper/45">주최</dt>
+                <dt className="text-ink/45">주최</dt>
                 <dd className="font-medium">{festival.hostKo}</dd>
               </div>
             </dl>
@@ -96,7 +96,7 @@ export default function HomePage() {
               <SaveButton />
               <Link
                 href="/program"
-                className="rounded-full border border-paper/25 px-5 py-3 text-sm font-bold hover:border-amber hover:text-amber"
+                className="rounded-full border border-ink/25 px-5 py-3 text-sm font-bold hover:border-amber hover:text-amber"
               >
                 프로그램 보기
               </Link>
@@ -110,7 +110,7 @@ export default function HomePage() {
           </div>
 
           <div className="reveal relative mx-auto w-full max-w-xs">
-            <div className="rotate-1 overflow-hidden rounded-[1.5rem] border border-paper/20 bg-ink-soft shadow-[0_30px_60px_rgba(0,0,0,0.5)]">
+            <div className="rotate-1 overflow-hidden rounded-[1.5rem] border border-ink/15 bg-card shadow-[0_22px_50px_rgba(28,23,18,0.18)]">
               <Image
                 src={photos.keyVisual.img}
                 alt={photos.keyVisual.alt}
@@ -119,23 +119,23 @@ export default function HomePage() {
                 className="h-auto w-full"
               />
             </div>
-            <div className="absolute bottom-3 left-3 flex h-16 w-16 items-center justify-center rounded-2xl border border-paper/15 bg-ink/90 backdrop-blur">
+            <div className="absolute bottom-3 left-3 flex h-16 w-16 items-center justify-center rounded-2xl border border-ink/15 bg-ink/90 backdrop-blur">
               <Mascot className="h-12 w-11" wall={false} />
             </div>
-            <p className="mt-4 text-center text-xs text-paper/50">
+            <p className="mt-4 text-center text-xs text-ink/50">
               2026 공식 키비주얼 · {photos.keyVisual.credit}
             </p>
           </div>
         </Container>
 
         {/* 카피 마퀴 */}
-        <div className="relative border-y border-paper/10 bg-ink-soft/70 py-3">
+        <div className="relative border-y border-ink/10 bg-card py-3">
           <div className="flex overflow-hidden">
             {[0, 1].map((dup) => (
               <ul
                 key={dup}
                 aria-hidden={dup === 1}
-                className="animate-marquee flex shrink-0 items-center gap-10 whitespace-nowrap pr-10 font-display text-sm uppercase tracking-[0.2em] text-paper/60"
+                className="animate-marquee flex shrink-0 items-center gap-10 whitespace-nowrap pr-10 font-display text-sm uppercase tracking-[0.2em] text-ink/60"
               >
                 {[...copyBank, ...copyBank].map((c, i) => (
                   <li key={i} className="flex items-center gap-10">
@@ -164,11 +164,11 @@ export default function HomePage() {
             {VALUES.map(({ icon: Icon, title, body }) => (
               <li
                 key={title}
-                className="reveal rounded-2xl border border-paper/12 bg-ink-soft/40 p-7"
+                className="reveal rounded-2xl border border-ink/12 bg-card p-7"
               >
                 <Icon className="h-10 w-10 text-amber" />
                 <h3 className="mt-5 text-xl font-bold">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-paper/65">{body}</p>
+                <p className="mt-2 text-sm leading-relaxed text-ink/65">{body}</p>
               </li>
             ))}
           </ul>
@@ -176,7 +176,7 @@ export default function HomePage() {
       </section>
 
       {/* ------------------------------------------------ 프로그램 미리보기 */}
-      <section className="border-y border-paper/10 bg-ink-soft/25 py-20">
+      <section className="border-y border-ink/10 bg-card/70 py-20">
         <Container>
           <div className="flex flex-wrap items-end justify-between gap-4">
             <SectionHeading
@@ -186,7 +186,7 @@ export default function HomePage() {
             />
             <Link
               href="/program"
-              className="shrink-0 rounded-full border border-paper/25 px-5 py-2.5 text-sm font-bold hover:border-amber hover:text-amber"
+              className="shrink-0 rounded-full border border-ink/25 px-5 py-2.5 text-sm font-bold hover:border-amber hover:text-amber"
             >
               전체 프로그램 →
             </Link>
@@ -196,7 +196,7 @@ export default function HomePage() {
             {preview.map((p) => (
               <li
                 key={p.slug}
-                className="reveal group overflow-hidden rounded-2xl border border-paper/12 bg-ink transition-colors hover:border-amber/60"
+                className="reveal group overflow-hidden rounded-2xl border border-ink/12 bg-base transition-colors hover:border-amber/60"
               >
                 {p.photo && (
                   <div className="relative aspect-[16/10] w-full overflow-hidden">
@@ -217,11 +217,11 @@ export default function HomePage() {
                   <h3 className="text-xl font-bold group-hover:text-amber">
                     {p.nameKo}
                   </h3>
-                  <p className="mt-1 text-sm text-paper/45">{p.nameEn}</p>
-                  <p className="mt-3 text-sm leading-relaxed text-paper/70">
+                  <p className="mt-1 text-sm text-ink/45">{p.nameEn}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-ink/70">
                     {p.blurbKo}
                   </p>
-                  <p className="mt-4 text-xs text-paper/45">
+                  <p className="mt-4 text-xs text-ink/45">
                     {p.when} · {p.where}
                   </p>
                 </div>
@@ -249,7 +249,7 @@ export default function HomePage() {
                 aspect={i === 0 ? "aspect-[4/3] lg:aspect-[16/10]" : "aspect-[4/3]"}
               />
             ))}
-            <div className="flex flex-col justify-center rounded-2xl border border-amber/30 bg-ink-soft/40 p-6">
+            <div className="flex flex-col justify-center rounded-2xl border border-amber/30 bg-card p-6">
               <p className="font-display text-sm uppercase tracking-[0.18em] text-amber">
                 Every May
               </p>
@@ -268,7 +268,7 @@ export default function HomePage() {
       </section>
 
       {/* ------------------------------------------------------ 브랜드 요소 */}
-      <section className="border-t border-paper/10 py-20">
+      <section className="border-t border-ink/10 py-20">
         <Container>
           <SectionHeading
             kicker="Identity"
@@ -277,40 +277,40 @@ export default function HomePage() {
           />
 
           <div className="mt-12 grid gap-6 lg:grid-cols-3">
-            <div className="rounded-2xl border border-paper/12 bg-ink-soft/40 p-8">
-              <MimeSymbol className="h-24 w-24 text-paper" />
+            <div className="rounded-2xl border border-ink/12 bg-card p-8">
+              <MimeSymbol className="h-24 w-24 text-ink" />
               <h3 className="mt-5 font-bold">심벌 · 무언의 얼굴</h3>
-              <p className="mt-2 text-sm text-paper/65">
+              <p className="mt-2 text-sm text-ink/65">
                 비어 있는 말풍선 = 침묵. 눈빛과 그려진 눈물이 말을 대신합니다.
               </p>
             </div>
-            <div className="rounded-2xl border border-paper/12 bg-ink-soft/40 p-8">
+            <div className="rounded-2xl border border-ink/12 bg-card p-8">
               <div className="flex gap-2">
                 {[
-                  ["#0e0e12", "Ink"],
-                  ["#f6f2e9", "Paper"],
-                  ["#ffb627", "Amber"],
-                  ["#1e6f8e", "Lake"],
-                  ["#ff5a5f", "Coral"],
+                  ["#f4eee1", "Paper"],
+                  ["#1c1712", "Ink"],
+                  ["#a56300", "Amber"],
+                  ["#196380", "Lake"],
+                  ["#c9333a", "Coral"],
                 ].map(([hex, name]) => (
                   <div key={name} className="flex-1">
                     <div
-                      className="h-16 w-full rounded-lg border border-paper/10"
+                      className="h-16 w-full rounded-lg border border-ink/20"
                       style={{ background: hex }}
                     />
-                    <p className="mt-1.5 text-[11px] text-paper/55">{name}</p>
+                    <p className="mt-1.5 text-[11px] text-ink/55">{name}</p>
                   </div>
                 ))}
               </div>
               <h3 className="mt-5 font-bold">무대의 색</h3>
-              <p className="mt-2 text-sm text-paper/65">
-                어둠(Ink)과 분장(Paper) 위에 조명(Amber)·호수(Lake)·몸짓(Coral).
+              <p className="mt-2 text-sm text-ink/65">
+                분장의 종이빛(Paper)과 그림자(Ink) 위에 조명(Amber)·호수(Lake)·몸짓(Coral).
               </p>
             </div>
-            <div className="flex flex-col rounded-2xl border border-paper/12 bg-ink-soft/40 p-8">
+            <div className="flex flex-col rounded-2xl border border-ink/12 bg-card p-8">
               <IconBalloon className="h-12 w-12 text-lake" />
               <h3 className="mt-5 font-bold">캐릭터 · 미모(MIMO)</h3>
-              <p className="mt-2 flex-1 text-sm text-paper/65">
+              <p className="mt-2 flex-1 text-sm text-ink/65">
                 공식 키비주얼의 ‘몸짓하는 검은 실루엣’에서 태어난 몸짓요정. 축제의
                 안내자이자 마스코트.
               </p>
@@ -326,7 +326,7 @@ export default function HomePage() {
       </section>
 
       {/* --------------------------------------------- 국민 → 세계인 내러티브 */}
-      <section className="relative overflow-hidden border-y border-paper/10 py-24">
+      <section className="relative overflow-hidden border-y border-ink/10 py-24">
         <Image
           src={photos.goblinFire.img}
           alt=""
@@ -334,7 +334,7 @@ export default function HomePage() {
           sizes="100vw"
           className="object-cover opacity-20"
         />
-        <div className="absolute inset-0 bg-ink/80" />
+        <div className="absolute inset-0 bg-base/82" />
         <Container className="relative text-center">
           <p className="font-display text-sm uppercase tracking-[0.24em] text-amber">
             From Chuncheon to the World
@@ -344,7 +344,7 @@ export default function HomePage() {
             <span className="text-amber">언어가 필요 없는 세계인의 축제</span>로.
             북마크 링크 하나가 그 초대장입니다.
           </p>
-          <p className="mx-auto mt-5 max-w-2xl text-base text-paper/65">
+          <p className="mx-auto mt-5 max-w-2xl text-base text-ink/65">
             A festival with no language barrier — one bookmarked link is the
             invitation the whole world can open.
           </p>
@@ -354,11 +354,11 @@ export default function HomePage() {
       {/* ------------------------------------------------------ 북마크 CTA */}
       <section className="py-24">
         <Container>
-          <div className="reveal rounded-3xl border border-amber/40 bg-gradient-to-br from-ink-soft/70 to-ink p-10 text-center sm:p-14">
+          <div className="reveal rounded-3xl border border-amber/40 bg-gradient-to-br from-card to-base p-10 text-center sm:p-14">
             <h2 className="text-3xl font-black tracking-tight sm:text-4xl">
               북마크 한 번, 세계인의 축제로.
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-paper/70">
+            <p className="mx-auto mt-4 max-w-xl text-ink/70">
               이 페이지를 저장하고 공유해 주세요. D-day 알림, 프로그램표, 오시는
               길이 앱처럼 열립니다.
             </p>

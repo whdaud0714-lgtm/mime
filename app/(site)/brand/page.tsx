@@ -86,11 +86,12 @@ const TONE = [
 ];
 
 const COLORS = [
-  { hex: "#0e0e12", name: "Ink Black", use: "기본 배경 · 무대의 어둠. 전체 화면의 기준색." },
-  { hex: "#f6f2e9", name: "Paper White", use: "본문 텍스트 · 마임 분장. 여백과 인쇄의 질감." },
-  { hex: "#ffb627", name: "Spotlight Amber", use: "핵심 강조 · CTA · 링크. 무대 조명 = 주목." },
-  { hex: "#1e6f8e", name: "Lake Blue", use: "보조색 · 춘천 호수. 정보·차분한 면." },
-  { hex: "#ff5a5f", name: "Signal Coral", use: "포인트 · 태그·에너지. 몸짓의 생동." },
+  { hex: "#f4eee1", name: "Paper Base", use: "기본 배경 · 마임 분장의 종이빛. 전체 화면의 기준색." },
+  { hex: "#fcf9f1", name: "Card", use: "카드·패널. 배경보다 한 톤 밝게 띄워 정보를 얹는 면." },
+  { hex: "#1c1712", name: "Ink", use: "본문 텍스트 · 강조색 위 글자 · 무대의 그림자." },
+  { hex: "#a56300", name: "Spotlight Amber", use: "핵심 강조 · CTA · 링크. 밝은 배경에서도 읽히는 조명색." },
+  { hex: "#196380", name: "Lake Blue", use: "보조색 · 춘천 호수. 정보·차분한 면." },
+  { hex: "#c9333a", name: "Signal Coral", use: "포인트 · 태그·에너지. 몸짓의 생동." },
 ];
 
 export default function BrandPage() {
@@ -116,20 +117,20 @@ export default function BrandPage() {
                 ["S · 강점", "Strengths", SWOT.S, "border-amber/40"],
                 ["W · 약점", "Weaknesses", SWOT.W, "border-coral/40"],
                 ["O · 기회", "Opportunities", SWOT.O, "border-lake/50"],
-                ["T · 위협", "Threats", SWOT.T, "border-paper/25"],
+                ["T · 위협", "Threats", SWOT.T, "border-ink/25"],
               ] as const
             ).map(([ko, en, list, border]) => (
               <div
                 key={en}
-                className={`reveal rounded-2xl border ${border} bg-ink-soft/40 p-6`}
+                className={`reveal rounded-2xl border ${border} bg-card p-6`}
               >
                 <div className="flex items-baseline justify-between">
                   <h3 className="text-lg font-black">{ko}</h3>
-                  <span className="font-display text-xs uppercase tracking-[0.2em] text-paper/40">
+                  <span className="font-display text-xs uppercase tracking-[0.2em] text-ink/40">
                     {en}
                   </span>
                 </div>
-                <ul className="mt-4 space-y-2 text-sm leading-relaxed text-paper/75">
+                <ul className="mt-4 space-y-2 text-sm leading-relaxed text-ink/75">
                   {list.map((item) => (
                     <li key={item} className="flex gap-2">
                       <span className="text-amber">·</span>
@@ -146,9 +147,9 @@ export default function BrandPage() {
           </h3>
           <div className="mt-5 grid gap-4 sm:grid-cols-2">
             {CROSS.map(([t, d]) => (
-              <div key={t} className="rounded-xl border border-paper/12 bg-ink p-5">
+              <div key={t} className="rounded-xl border border-ink/12 bg-base p-5">
                 <p className="font-bold text-coral">{t}</p>
-                <p className="mt-1.5 text-sm leading-relaxed text-paper/70">{d}</p>
+                <p className="mt-1.5 text-sm leading-relaxed text-ink/70">{d}</p>
               </div>
             ))}
           </div>
@@ -156,7 +157,7 @@ export default function BrandPage() {
       </section>
 
       {/* ------------------------------------------ 2. 목표 & 타겟 */}
-      <section className="border-y border-paper/10 bg-ink-soft/25 py-16">
+      <section className="border-y border-ink/10 bg-card/70 py-16">
         <Container>
           <SectionHeading
             kicker="02 · Goal & Target"
@@ -164,16 +165,16 @@ export default function BrandPage() {
           />
 
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
-            <div className="rounded-2xl border border-paper/12 bg-ink p-7">
+            <div className="rounded-2xl border border-ink/12 bg-base p-7">
               <h3 className="font-bold text-amber">캠페인 목표</h3>
-              <ul className="mt-4 space-y-3 text-sm text-paper/75">
-                <li><b className="text-paper">정성</b> · ‘춘천 = 마임’, ‘마임 = 언어가 필요 없는 축제’ 연상 확립</li>
-                <li><b className="text-paper">정량</b> · 북마크 링크 저장 10만 · 공유 5만 · PWA 설치 2만 (캠페인 기간)</li>
-                <li><b className="text-paper">전환</b> · 온라인 관심 → 유료 예매·현장 방문·외국인 관객 비중 확대</li>
-                <li><b className="text-paper">지속</b> · 축제 종료 후에도 유지되는 상시 팬 채널(재방문·차년도 알림)</li>
+              <ul className="mt-4 space-y-3 text-sm text-ink/75">
+                <li><b className="text-ink">정성</b> · ‘춘천 = 마임’, ‘마임 = 언어가 필요 없는 축제’ 연상 확립</li>
+                <li><b className="text-ink">정량</b> · 북마크 링크 저장 10만 · 공유 5만 · PWA 설치 2만 (캠페인 기간)</li>
+                <li><b className="text-ink">전환</b> · 온라인 관심 → 유료 예매·현장 방문·외국인 관객 비중 확대</li>
+                <li><b className="text-ink">지속</b> · 축제 종료 후에도 유지되는 상시 팬 채널(재방문·차년도 알림)</li>
               </ul>
             </div>
-            <div className="rounded-2xl border border-paper/12 bg-ink p-7">
+            <div className="rounded-2xl border border-ink/12 bg-base p-7">
               <h3 className="font-bold text-amber">소구 대상 확장 로드맵</h3>
               <ol className="mt-4 space-y-4">
                 {REACH.map(([t, d], i) => (
@@ -183,7 +184,7 @@ export default function BrandPage() {
                     </span>
                     <div>
                       <p className="text-sm font-bold">{t}</p>
-                      <p className="text-sm text-paper/65">{d}</p>
+                      <p className="text-sm text-ink/65">{d}</p>
                     </div>
                   </li>
                 ))}
@@ -198,13 +199,13 @@ export default function BrandPage() {
             {PERSONAS.map((p) => (
               <div
                 key={p.name}
-                className="reveal rounded-xl border border-paper/12 bg-ink-soft/40 p-5"
+                className="reveal rounded-xl border border-ink/12 bg-card p-5"
               >
                 <p className="font-bold">{p.name}</p>
-                <p className="mt-2 text-sm leading-relaxed text-paper/65">
+                <p className="mt-2 text-sm leading-relaxed text-ink/65">
                   {p.detail}
                 </p>
-                <p className="mt-3 border-t border-paper/10 pt-3 text-xs text-amber">
+                <p className="mt-3 border-t border-ink/10 pt-3 text-xs text-amber">
                   핵심 소구 · {p.hook}
                 </p>
               </div>
@@ -228,7 +229,7 @@ export default function BrandPage() {
             <p className="mt-3 text-2xl font-black leading-snug sm:text-3xl">
               “몸의 언어” — 침묵으로 건네는 세계 공용어
             </p>
-            <p className="mt-3 max-w-2xl text-sm text-paper/70">
+            <p className="mt-3 max-w-2xl text-sm text-ink/70">
               마임의 본질(말 없이 통함)을 곧 축제의 세계화 논리로 삼는다. 자막도
               번역도 필요 없기에, 이 축제는 처음부터 세계인의 것이 될 수 있다.
             </p>
@@ -237,7 +238,7 @@ export default function BrandPage() {
                 (k) => (
                   <span
                     key={k}
-                    className="rounded-full border border-paper/20 px-3 py-1 text-xs text-paper/80"
+                    className="rounded-full border border-ink/20 px-3 py-1 text-xs text-ink/80"
                   >
                     {k}
                   </span>
@@ -247,39 +248,39 @@ export default function BrandPage() {
           </div>
 
           <div className="mt-8 grid gap-6 lg:grid-cols-2">
-            <div className="rounded-2xl border border-paper/12 bg-ink-soft/40 p-7">
+            <div className="rounded-2xl border border-ink/12 bg-card p-7">
               <h3 className="font-bold text-amber">슬로건 체계</h3>
-              <ul className="mt-4 space-y-3 text-sm text-paper/75">
+              <ul className="mt-4 space-y-3 text-sm text-ink/75">
                 <li>
-                  <b className="text-paper">메인(국문)</b> · “{festival.sloganKo}”
+                  <b className="text-ink">메인(국문)</b> · “{festival.sloganKo}”
                 </li>
                 <li>
-                  <b className="text-paper">메인(영문)</b> · “{festival.sloganEn}.”
+                  <b className="text-ink">메인(영문)</b> · “{festival.sloganEn}.”
                 </li>
                 <li>
-                  <b className="text-paper">서브</b> · “{festival.taglineKo}”
+                  <b className="text-ink">서브</b> · “{festival.taglineKo}”
                 </li>
                 <li>
-                  <b className="text-paper">캠페인</b> · “북마크 한 번, 세계인의 축제로.”
+                  <b className="text-ink">캠페인</b> · “북마크 한 번, 세계인의 축제로.”
                 </li>
               </ul>
             </div>
-            <div className="rounded-2xl border border-paper/12 bg-ink-soft/40 p-7">
+            <div className="rounded-2xl border border-ink/12 bg-card p-7">
               <h3 className="font-bold text-amber">톤 &amp; 매너</h3>
-              <ul className="mt-4 space-y-3 text-sm text-paper/75">
+              <ul className="mt-4 space-y-3 text-sm text-ink/75">
                 {TONE.map(([t, d]) => (
                   <li key={t}>
-                    <b className="text-paper">{t}</b> · {d}
+                    <b className="text-ink">{t}</b> · {d}
                   </li>
                 ))}
               </ul>
             </div>
           </div>
 
-          <div className="mt-8 rounded-2xl border border-paper/12 bg-ink p-7">
+          <div className="mt-8 rounded-2xl border border-ink/12 bg-base p-7">
             <h3 className="font-bold text-amber">표현전략 (Visual Principles)</h3>
-            <ul className="mt-4 grid gap-3 text-sm text-paper/75 sm:grid-cols-2">
-              <li>· 흑(무대)·백(분장) 기본 위에 조명색 Amber 한 방울로 시선 유도</li>
+            <ul className="mt-4 grid gap-3 text-sm text-ink/75 sm:grid-cols-2">
+              <li>· 분장의 종이빛(Paper) 위에 그림자(Ink) 텍스트, 조명색 Amber 한 방울로 시선 유도</li>
               <li>· 텍스트는 무겁고 크게, 여백은 넉넉하게 — 포스터의 문법</li>
               <li>· 인물·손·얼굴의 ‘동작 실루엣’을 주요 이미지로 사용</li>
               <li>· 점선(보이지 않는 벽), 말풍선(침묵), 별(스포트라이트)을 반복 모티프로</li>
@@ -291,7 +292,7 @@ export default function BrandPage() {
       </section>
 
       {/* ------------------------------------- 4. 아이덴티티 시스템 */}
-      <section className="border-t border-paper/10 py-16">
+      <section className="border-t border-ink/10 py-16">
         <Container>
           <SectionHeading
             kicker="04 · Identity System"
@@ -299,35 +300,36 @@ export default function BrandPage() {
           />
 
           <div className="mt-10 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="flex flex-col items-center justify-center gap-6 rounded-2xl border border-paper/12 bg-paper p-10 text-ink">
+            <div className="flex flex-col items-center justify-center gap-6 rounded-2xl border border-ink/12 bg-ink p-10 text-paper">
               <MimeSymbol className="h-32 w-32" />
-              <Wordmark className="text-2xl text-ink [&_.text-amber]:text-lake" />
+              <Wordmark className="text-2xl text-paper [&_.text-amber]:text-[#e8a021]" />
+              <p className="text-xs text-paper/50">반전(어두운 배경) 적용 예시</p>
             </div>
             <div className="space-y-4">
-              <div className="rounded-xl border border-paper/12 bg-ink-soft/40 p-5">
+              <div className="rounded-xl border border-ink/12 bg-card p-5">
                 <h3 className="font-bold text-amber">심벌 · 무언의 얼굴</h3>
-                <p className="mt-2 text-sm text-paper/70">
+                <p className="mt-2 text-sm text-ink/70">
                   말풍선(대화)과 마임 분장 얼굴의 결합. 말풍선 안은 비워 두고,
                   뜬 눈 하나와 그려진 눈물이 ‘말 없이 건네는 말’을 상징한다.
                   단색·1도 인쇄, 최소 16px까지 판독 가능하도록 설계.
                 </p>
               </div>
-              <div className="rounded-xl border border-paper/12 bg-ink-soft/40 p-5">
+              <div className="rounded-xl border border-ink/12 bg-card p-5">
                 <h3 className="font-bold text-amber">시그니처 (잠금 조합)</h3>
-                <div className="mt-3 rounded-lg bg-ink p-4">
-                  <Signature className="text-xl text-paper" />
+                <div className="mt-3 rounded-lg bg-base p-4">
+                  <Signature className="text-xl text-ink" />
                 </div>
-                <p className="mt-3 text-sm text-paper/70">
+                <p className="mt-3 text-sm text-ink/70">
                   심벌 : 워드마크 = 1 : 2.1 비율 고정. 국문 상단, 영문+연도 하단.
                   가로형 기본, 협소 공간에서는 심벌만 단독 사용.
                 </p>
               </div>
               <div className="grid gap-3 sm:grid-cols-2">
-                <div className="rounded-xl border border-lake/40 bg-ink p-4 text-xs text-paper/70">
-                  <b className="text-paper">DO</b> · 흑 또는 백 단색, 충분한 여백(심벌 높이의 50%), 지정 색상만
+                <div className="rounded-xl border border-lake/40 bg-base p-4 text-xs text-ink/70">
+                  <b className="text-ink">DO</b> · 흑 또는 백 단색, 충분한 여백(심벌 높이의 50%), 지정 색상만
                 </div>
-                <div className="rounded-xl border border-coral/40 bg-ink p-4 text-xs text-paper/70">
-                  <b className="text-paper">DON’T</b> · 기울이기·그림자·비율 왜곡, 저대비 배경, 말풍선 안 채우기
+                <div className="rounded-xl border border-coral/40 bg-base p-4 text-xs text-ink/70">
+                  <b className="text-ink">DON’T</b> · 기울이기·그림자·비율 왜곡, 저대비 배경, 말풍선 안 채우기
                 </div>
               </div>
             </div>
@@ -337,16 +339,16 @@ export default function BrandPage() {
           <h3 className="mt-14 font-display text-sm uppercase tracking-[0.2em] text-amber">
             컬러 시스템
           </h3>
-          <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {COLORS.map((c) => (
-              <div key={c.name} className="rounded-xl border border-paper/12 bg-ink p-3">
+              <div key={c.name} className="rounded-xl border border-ink/12 bg-base p-3">
                 <div
-                  className="h-20 w-full rounded-lg border border-paper/10"
+                  className="h-20 w-full rounded-lg border border-ink/20"
                   style={{ background: c.hex }}
                 />
                 <p className="mt-2 text-sm font-bold">{c.name}</p>
-                <p className="font-display text-xs text-paper/45">{c.hex.toUpperCase()}</p>
-                <p className="mt-1 text-xs leading-relaxed text-paper/60">{c.use}</p>
+                <p className="font-display text-xs text-ink/45">{c.hex.toUpperCase()}</p>
+                <p className="mt-1 text-xs leading-relaxed text-ink/60">{c.use}</p>
               </div>
             ))}
           </div>
@@ -356,19 +358,19 @@ export default function BrandPage() {
             타이포그래피
           </h3>
           <div className="mt-5 grid gap-4 md:grid-cols-2">
-            <div className="rounded-xl border border-paper/12 bg-ink p-6">
+            <div className="rounded-xl border border-ink/12 bg-base p-6">
               <p className="text-4xl font-black tracking-tight">춘천마임축제</p>
-              <p className="mt-2 text-sm text-paper/60">
-                국문 · <b className="text-paper">Noto Sans KR</b> — 본문 400/500,
+              <p className="mt-2 text-sm text-ink/60">
+                국문 · <b className="text-ink">Noto Sans KR</b> — 본문 400/500,
                 헤드라인 900. 자간 -2%.
               </p>
             </div>
-            <div className="rounded-xl border border-paper/12 bg-ink p-6">
+            <div className="rounded-xl border border-ink/12 bg-base p-6">
               <p className="font-display text-4xl uppercase tracking-[0.14em] text-amber">
                 Silence Speaks
               </p>
-              <p className="mt-2 text-sm text-paper/60">
-                영문 디스플레이 · <b className="text-paper">Anton</b> — 포스터
+              <p className="mt-2 text-sm text-ink/60">
+                영문 디스플레이 · <b className="text-ink">Anton</b> — 포스터
                 헤드·키커·연도 표기. 대문자, 자간 +14%.
               </p>
             </div>
@@ -379,31 +381,31 @@ export default function BrandPage() {
             캐릭터 · 미모(MIMO)
           </h3>
           <div className="mt-5 grid gap-6 lg:grid-cols-[1fr_1.2fr]">
-            <div className="grid grid-cols-2 gap-4 rounded-2xl border border-paper/12 bg-ink-soft/40 p-6">
-              <div className="rounded-xl bg-ink p-3">
+            <div className="grid grid-cols-2 gap-4 rounded-2xl border border-ink/12 bg-card p-6">
+              <div className="rounded-xl bg-base p-3">
                 <Mascot className="w-full" />
-                <p className="mt-2 text-center text-xs text-paper/50">벽 밀기</p>
+                <p className="mt-2 text-center text-xs text-ink/50">벽 밀기</p>
               </div>
-              <div className="rounded-xl bg-ink p-3">
+              <div className="rounded-xl bg-base p-3">
                 <Mascot className="w-full" wall={false} />
-                <p className="mt-2 text-center text-xs text-paper/50">인사</p>
+                <p className="mt-2 text-center text-xs text-ink/50">인사</p>
               </div>
             </div>
-            <div className="space-y-3 text-sm text-paper/75">
+            <div className="space-y-3 text-sm text-ink/75">
               <p>
-                <b className="text-paper">설정</b> · 춘천 의암호의 물방울에서
+                <b className="text-ink">설정</b> · 춘천 의암호의 물방울에서
                 태어난 몸짓요정. 말은 못 하지만 표정과 손짓으로 누구와도 대화한다.
               </p>
               <p>
-                <b className="text-paper">식별 요소</b> · 하얀 분장 얼굴 · 물방울
+                <b className="text-ink">식별 요소</b> · 하얀 분장 얼굴 · 물방울
                 베레(Lake Blue) · 코랄 스트라이프 셔츠 · 하얀 장갑.
               </p>
               <p>
-                <b className="text-paper">역할</b> · 축제의 안내자. 프로그램표에서
+                <b className="text-ink">역할</b> · 축제의 안내자. 프로그램표에서
                 길을 알려 주고, 앱 알림·스티커·거리 포토존에 등장.
               </p>
               <p>
-                <b className="text-paper">보이스</b> · 말풍선은 항상 그림/기호로만
+                <b className="text-ink">보이스</b> · 말풍선은 항상 그림/기호로만
                 채운다(느낌표, 하트, 발자국). 절대 문장을 넣지 않는다.
               </p>
             </div>
@@ -413,9 +415,9 @@ export default function BrandPage() {
           <h3 className="mt-14 font-display text-sm uppercase tracking-[0.2em] text-amber">
             공식 홍보물과의 관계
           </h3>
-          <p className="mt-3 max-w-2xl text-sm text-paper/70">
+          <p className="mt-3 max-w-2xl text-sm text-ink/70">
             본 프로젝트의 아이덴티티는 춘천마임축제의 기존 시각 언어 —{" "}
-            <b className="text-paper">몸짓하는 검은 실루엣</b>, 네온 옐로 타이포,
+            <b className="text-ink">몸짓하는 검은 실루엣</b>, 네온 옐로 타이포,
             물·불의 난장 이미지 — 를 이어받아 ‘침묵으로 세계와 통한다’는
             북마크 캠페인 메시지에 맞게 확장한 것입니다. (아래 이미지는 참고용
             공식 홍보물이며 저작권은 춘천마임축제에 있습니다.)
@@ -441,10 +443,10 @@ export default function BrandPage() {
             ].map(({ Icon, label }) => (
               <li
                 key={label}
-                className="flex flex-col items-center gap-2 rounded-xl border border-paper/12 bg-ink p-5"
+                className="flex flex-col items-center gap-2 rounded-xl border border-ink/12 bg-base p-5"
               >
                 <Icon className="h-10 w-10 text-amber" />
-                <span className="text-center text-xs text-paper/60">{label}</span>
+                <span className="text-center text-xs text-ink/60">{label}</span>
               </li>
             ))}
           </ul>
@@ -457,7 +459,7 @@ export default function BrandPage() {
             {[festival.taglineKo, ...copyBank].map((c) => (
               <p
                 key={c}
-                className="rounded-xl border border-paper/12 bg-ink p-4 text-lg font-bold"
+                className="rounded-xl border border-ink/12 bg-base p-4 text-lg font-bold"
               >
                 “{c}”
               </p>
@@ -467,7 +469,7 @@ export default function BrandPage() {
       </section>
 
       {/* -------------------------------- 5. 북마크 캠페인 운영안 */}
-      <section className="border-t border-paper/10 bg-ink-soft/25 py-16">
+      <section className="border-t border-ink/10 bg-card/70 py-16">
         <Container>
           <SectionHeading
             kicker="05 · Activation"
@@ -483,9 +485,9 @@ export default function BrandPage() {
               ["현장 연계", "포스터·티켓·거리 배너의 QR → 동일 링크. 온·오프라인 접점 통합."],
               ["측정", "저장수·공유수·설치수·푸시 허용률·예매 전환을 핵심 지표(KPI)로."],
             ].map(([t, d]) => (
-              <div key={t} className="rounded-xl border border-paper/12 bg-ink p-5">
+              <div key={t} className="rounded-xl border border-ink/12 bg-base p-5">
                 <p className="font-bold text-amber">{t}</p>
-                <p className="mt-1.5 text-sm leading-relaxed text-paper/70">{d}</p>
+                <p className="mt-1.5 text-sm leading-relaxed text-ink/70">{d}</p>
               </div>
             ))}
           </div>

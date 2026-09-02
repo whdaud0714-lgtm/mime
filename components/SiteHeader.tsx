@@ -18,9 +18,9 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-paper/10 bg-ink/85 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-ink/10 bg-base/85 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5">
-        <Link href="/" className="text-paper" aria-label="춘천마임축제 홈">
+        <Link href="/" className="text-ink" aria-label="춘천마임축제 홈">
           <Signature className="text-lg" />
         </Link>
 
@@ -33,8 +33,8 @@ export function SiteHeader() {
                 href={item.href}
                 className={`rounded-full px-3.5 py-2 text-sm font-medium transition-colors ${
                   active
-                    ? "bg-paper text-ink"
-                    : "text-paper/80 hover:bg-paper/10 hover:text-paper"
+                    ? "bg-ink text-paper"
+                    : "text-ink/75 hover:bg-ink/10 hover:text-ink"
                 }`}
               >
                 {item.label}
@@ -67,16 +67,16 @@ export function SiteHeader() {
       </div>
 
       {open && (
-        <nav className="border-t border-paper/10 px-5 py-3 md:hidden">
+        <nav className="border-t border-ink/10 px-5 py-3 md:hidden">
           {NAV.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               onClick={() => setOpen(false)}
-              className="flex items-center justify-between rounded-lg px-3 py-3 text-base hover:bg-paper/10"
+              className="flex items-center justify-between rounded-lg px-3 py-3 text-base hover:bg-ink/10"
             >
               <span>{item.label}</span>
-              <span className="text-xs text-paper/40">{item.en}</span>
+              <span className="text-xs text-ink/40">{item.en}</span>
             </Link>
           ))}
           <Link

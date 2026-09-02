@@ -22,7 +22,7 @@ export function Figure({
   return (
     <figure className={className}>
       <div
-        className={`relative ${aspect} w-full overflow-hidden ${rounded} border border-paper/12 bg-ink-soft`}
+        className={`relative ${aspect} w-full overflow-hidden ${rounded} border border-ink/12 bg-card`}
       >
         <Image
           src={photo.img}
@@ -35,9 +35,9 @@ export function Figure({
         />
       </div>
       {showCaption && (
-        <figcaption className="mt-2 flex items-center justify-between gap-3 text-xs text-paper/50">
+        <figcaption className="mt-2 flex items-center justify-between gap-3 text-xs text-ink/50">
           <span>{photo.caption}</span>
-          <span className="shrink-0 text-paper/35">{photo.credit}</span>
+          <span className="shrink-0 text-ink/35">{photo.credit}</span>
         </figcaption>
       )}
     </figure>

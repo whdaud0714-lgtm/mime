@@ -53,7 +53,16 @@ export function Mascot({ className, wall = true }: MascotProps) {
 
       {/* 몸통 — 스트라이프 셔츠 */}
       <g>
-        <rect x="70" y="120" width="70" height="84" rx="20" fill="#f6f2e9" />
+        <rect
+          x="70"
+          y="120"
+          width="70"
+          height="84"
+          rx="20"
+          fill="#f6f2e9"
+          stroke="#1c1712"
+          strokeWidth="2.5"
+        />
         <rect x="70" y="132" width="70" height="8" fill="#ff5a5f" />
         <rect x="70" y="152" width="70" height="8" fill="#ff5a5f" />
         <rect x="70" y="172" width="70" height="8" fill="#ff5a5f" />
@@ -78,7 +87,14 @@ export function Mascot({ className, wall = true }: MascotProps) {
       <circle cx="151" cy="114" r="9" fill="#f6f2e9" />
 
       {/* 머리 */}
-      <circle cx="104" cy="82" r="40" fill="#f6f2e9" />
+      <circle
+        cx="104"
+        cy="82"
+        r="40"
+        fill="#f6f2e9"
+        stroke="#1c1712"
+        strokeWidth="2.5"
+      />
       {/* 눈썹 */}
       <path
         d="M84 68c5-6 15-6 20 0M104 68c5-6 15-6 20 0"

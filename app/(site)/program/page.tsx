@@ -45,20 +45,20 @@ export default function ProgramPage() {
             {DAYS.map((day) => (
               <li
                 key={day.d}
-                className="reveal rounded-xl border border-paper/12 bg-ink-soft/40 p-4"
+                className="reveal rounded-xl border border-ink/12 bg-card p-4"
               >
                 <div className="flex items-baseline justify-between">
                   <span className="font-display text-sm text-amber">{day.d}</span>
                   <span className="text-xs font-bold text-coral">{day.label}</span>
                 </div>
-                <p className="mt-2 text-sm text-paper/70">{day.note}</p>
+                <p className="mt-2 text-sm text-ink/70">{day.note}</p>
               </li>
             ))}
           </ol>
         </Container>
       </section>
 
-      <section className="border-t border-paper/10 py-16">
+      <section className="border-t border-ink/10 py-16">
         <Container>
           {ORDER.map((kind) => {
             const list = programs.filter((p) => p.kind === kind);
@@ -72,7 +72,7 @@ export default function ProgramPage() {
                   {list.map((p) => (
                     <li
                       key={p.slug}
-                      className="reveal overflow-hidden rounded-2xl border border-paper/12 bg-ink"
+                      className="reveal overflow-hidden rounded-2xl border border-ink/12 bg-base"
                     >
                       {p.photo && (
                         <div className="relative aspect-[16/9] w-full">
@@ -88,17 +88,17 @@ export default function ProgramPage() {
                       )}
                       <div className="p-6">
                         <h3 className="text-xl font-bold">{p.nameKo}</h3>
-                        <p className="mt-1 text-sm text-paper/45">{p.nameEn}</p>
-                        <p className="mt-3 text-sm leading-relaxed text-paper/70">
+                        <p className="mt-1 text-sm text-ink/45">{p.nameEn}</p>
+                        <p className="mt-3 text-sm leading-relaxed text-ink/70">
                           {p.blurbKo}
                         </p>
-                        <dl className="mt-4 flex flex-wrap gap-x-6 gap-y-1 text-xs text-paper/50">
+                        <dl className="mt-4 flex flex-wrap gap-x-6 gap-y-1 text-xs text-ink/50">
                           <div className="flex gap-1.5">
-                            <dt className="text-paper/35">일시</dt>
+                            <dt className="text-ink/35">일시</dt>
                             <dd>{p.when}</dd>
                           </div>
                           <div className="flex gap-1.5">
-                            <dt className="text-paper/35">장소</dt>
+                            <dt className="text-ink/35">장소</dt>
                             <dd>{p.where}</dd>
                           </div>
                         </dl>
@@ -110,7 +110,7 @@ export default function ProgramPage() {
             );
           })}
 
-          <p className="mt-6 rounded-xl border border-paper/12 bg-ink-soft/30 p-5 text-xs text-paper/50">
+          <p className="mt-6 rounded-xl border border-ink/12 bg-card/70 p-5 text-xs text-ink/50">
             ※ 상기 라인업·시간·장소는 홍보 기획안용 예시이며, 실제 편성은
             조직위원회 발표에 따릅니다.
           </p>

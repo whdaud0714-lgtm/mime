@@ -25,12 +25,12 @@ export default function AppSchedule() {
               {list.map((p) => (
                 <li
                   key={p.slug}
-                  className="rounded-2xl border border-paper/12 bg-ink-soft/40 p-4"
+                  className="rounded-2xl border border-ink/12 bg-card p-4"
                 >
                   <h3 className="font-bold">{p.nameKo}</h3>
-                  <p className="text-xs text-paper/45">{p.nameEn}</p>
-                  <p className="mt-2 text-sm text-paper/70">{p.blurbKo}</p>
-                  <p className="mt-2 text-xs text-paper/50">
+                  <p className="text-xs text-ink/45">{p.nameEn}</p>
+                  <p className="mt-2 text-sm text-ink/70">{p.blurbKo}</p>
+                  <p className="mt-2 text-xs text-ink/50">
                     🕘 {p.when} · 📍 {p.where}
                   </p>
                 </li>
@@ -40,7 +40,7 @@ export default function AppSchedule() {
         );
       })}
 
-      <p className="rounded-xl border border-paper/12 bg-ink-soft/30 p-4 text-xs text-paper/45">
+      <p className="rounded-xl border border-ink/12 bg-card/70 p-4 text-xs text-ink/45">
         상기 편성은 홍보 기획안용 예시입니다.
       </p>
     </div>

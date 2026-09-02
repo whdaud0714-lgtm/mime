@@ -64,11 +64,11 @@ export default function AboutPage() {
               { icon: IconSpotlight, t: "무대가 어디든", d: "조명 한 대와 배우 한 명이면 골목도 광장도 무대가 됩니다." },
               { icon: IconStar, t: "관객이 완성한다", d: "웃음과 침묵, 참여가 없으면 장면은 완성되지 않습니다." },
             ].map(({ icon: Icon, t, d }) => (
-              <div key={t} className="reveal flex gap-4 rounded-2xl border border-paper/12 bg-ink-soft/40 p-6">
+              <div key={t} className="reveal flex gap-4 rounded-2xl border border-ink/12 bg-card p-6">
                 <Icon className="h-9 w-9 shrink-0 text-amber" />
                 <div>
                   <h3 className="font-bold">{t}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-paper/65">{d}</p>
+                  <p className="mt-1.5 text-sm leading-relaxed text-ink/65">{d}</p>
                 </div>
               </div>
             ))}
@@ -76,14 +76,14 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="border-y border-paper/10 bg-ink-soft/25 py-20">
+      <section className="border-y border-ink/10 bg-card/70 py-20">
         <Container>
           <SectionHeading kicker="History" title="1989 → 2026" desc="자발적 마임 무대에서 세계인의 축제로." />
           <ol className="mt-12 space-y-0">
             {HISTORY.map((h, i) => (
-              <li key={h.year} className="reveal grid grid-cols-[5.5rem_1fr] gap-5 border-l-2 border-paper/15 pb-8 pl-6 last:pb-0 sm:grid-cols-[7rem_1fr]">
+              <li key={h.year} className="reveal grid grid-cols-[5.5rem_1fr] gap-5 border-l-2 border-ink/15 pb-8 pl-6 last:pb-0 sm:grid-cols-[7rem_1fr]">
                 <span className="font-display text-lg text-amber">{h.year}</span>
-                <p className="text-sm leading-relaxed text-paper/75">{h.text}</p>
+                <p className="text-sm leading-relaxed text-ink/75">{h.text}</p>
                 {i === 0 && null}
               </li>
             ))}
@@ -105,23 +105,23 @@ export default function AboutPage() {
               ["세계 확장", "언어 장벽이 없는 콘텐츠 특성을 살려 해외 관객·관광객을 정면으로 겨냥."],
               ["디지털 초대", "북마크·공유 가능한 링크 하나로 누구나 축제의 홍보대사가 되는 구조."],
             ].map(([t, d]) => (
-              <div key={t} className="reveal rounded-2xl border border-amber/30 bg-ink-soft/40 p-7">
+              <div key={t} className="reveal rounded-2xl border border-amber/30 bg-card p-7">
                 <h3 className="text-lg font-bold text-amber">{t}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-paper/70">{d}</p>
+                <p className="mt-2 text-sm leading-relaxed text-ink/70">{d}</p>
               </div>
             ))}
           </div>
         </Container>
       </section>
 
-      <section className="border-t border-paper/10 py-20">
+      <section className="border-t border-ink/10 py-20">
         <Container>
           <SectionHeading kicker="FAQ" title="자주 묻는 질문" />
-          <dl className="mt-10 divide-y divide-paper/10">
+          <dl className="mt-10 divide-y divide-ink/10">
             {FAQ.map((f) => (
               <div key={f.q} className="py-6">
                 <dt className="text-lg font-bold">{f.q}</dt>
-                <dd className="mt-2 text-sm leading-relaxed text-paper/70">{f.a}</dd>
+                <dd className="mt-2 text-sm leading-relaxed text-ink/70">{f.a}</dd>
               </div>
             ))}
           </dl>

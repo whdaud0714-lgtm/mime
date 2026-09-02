@@ -7,7 +7,7 @@ export default function NotFound() {
       <Mascot className="h-40 w-36" />
       <p className="mt-4 font-display text-5xl text-amber">404</p>
       <h1 className="mt-2 text-xl font-black">이 장면은 대본에 없어요</h1>
-      <p className="mt-2 text-sm text-paper/60">
+      <p className="mt-2 text-sm text-ink/60">
         미모가 길을 잃었습니다. 무대로 돌아갈까요?
       </p>
       <Link
