@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container, SectionHeading } from "@/components/ui";
 import { Countdown } from "@/components/Countdown";
+import { IntroCover } from "@/components/IntroCover";
 import { SaveButton, ShareBar } from "@/components/share";
 import { Mascot } from "@/components/Mascot";
 import { MimeSymbol } from "@/components/brand";
@@ -44,6 +45,8 @@ export default function HomePage() {
 
 	return (
 		<>
+			<IntroCover />
+
 			{/* ---------------------------------------------------------- HERO */}
 			<section className="relative overflow-hidden">
 				<Image
