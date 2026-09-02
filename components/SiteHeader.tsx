@@ -4,6 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Signature } from "@/components/brand";
+import { Countdown } from "@/components/Countdown";
+import { festival } from "@/lib/festival";
 
 const NAV = [
 	{ href: "/about", label: "소개", en: "About" },
@@ -19,6 +21,22 @@ export function SiteHeader() {
 
 	return (
 		<header className="sticky top-0 z-50 border-b border-ink/10 bg-base/85 backdrop-blur">
+			<div className="bg-ink text-paper">
+				<div className="mx-auto flex max-w-6xl items-center gap-2.5 px-5 py-1.5 font-display text-[11px] uppercase tracking-[0.16em]">
+					<span className="shrink-0 text-amber">
+						{festival.periodEn}
+					</span>
+					<span aria-hidden className="shrink-0 text-paper/30">
+						/
+					</span>
+					<span className="truncate text-paper/75">
+						{festival.sloganKo} — {festival.sloganEn}
+					</span>
+					<span className="ml-auto shrink-0 rounded-full bg-paper/10 px-2 py-0.5">
+						<Countdown ribbon />
+					</span>
+				</div>
+			</div>
 			<div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5">
 				<Link
 					href="/"

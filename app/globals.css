@@ -20,6 +20,43 @@
   --animate-marquee: marquee 32s linear infinite;
   --animate-float: float 6s ease-in-out infinite;
   --animate-drift: drift 22s linear infinite;
+  --animate-confetti: confetti 9s linear infinite;
+  --animate-sway: sway 4.5s ease-in-out infinite;
+  --animate-pop: pop 2.4s ease-in-out infinite;
+}
+
+@keyframes confetti {
+  0% {
+    transform: translate3d(0, -12vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(var(--confetti-x, 12px), 112vh, 0) rotate(720deg);
+    opacity: 1;
+  }
+}
+
+@keyframes sway {
+  0%,
+  100% {
+    transform: rotate(-6deg);
+  }
+  50% {
+    transform: rotate(6deg);
+  }
+}
+
+@keyframes pop {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12);
+  }
 }
 
 @keyframes marquee {
@@ -96,8 +133,14 @@ body {
   .reveal,
   .animate-marquee,
   .animate-float,
-  .animate-drift {
+  .animate-drift,
+  .animate-confetti,
+  .animate-sway,
+  .animate-pop {
     animation: none !important;
+  }
+  .confetti-layer {
+    display: none !important;
   }
 }
 

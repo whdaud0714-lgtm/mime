@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Confetti } from "@/components/Motifs";
 
 export function Container({
 	children,
@@ -56,8 +57,10 @@ export function PageHero({
 	desc?: ReactNode;
 }) {
 	return (
-		<section className="border-b border-ink/10 bg-card/70">
-			<Container className="py-16 sm:py-20">
+		<section className="relative overflow-hidden border-b border-ink/10 bg-card/70">
+			<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(165,99,0,0.12),transparent_55%),radial-gradient(ellipse_at_bottom_left,rgba(25,99,128,0.1),transparent_55%)]" />
+			<Confetti count={14} />
+			<Container className="relative py-16 sm:py-20">
 				<p className="font-display text-sm uppercase tracking-[0.24em] text-amber">
 					{kicker}
 				</p>

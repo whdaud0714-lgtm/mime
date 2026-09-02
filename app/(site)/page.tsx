@@ -7,13 +7,16 @@ import { Mascot } from "@/components/Mascot";
 import { MimeSymbol } from "@/components/brand";
 import { Figure } from "@/components/Figure";
 import {
+	Confetti,
 	IconBalloon,
 	IconHands,
 	IconMask,
 	IconStar,
 	MotifField,
 } from "@/components/Motifs";
-import { copyBank, festival, programs } from "@/lib/festival";
+import { copyBank, festival, kindTone, programs } from "@/lib/festival";
+
+const MARQUEE_TONE = ["text-coral", "text-amber", "text-lake"];
 import { galleryKeys, photos } from "@/lib/photos";
 
 const VALUES = [
@@ -49,11 +52,12 @@ export default function HomePage() {
 					fill
 					priority
 					sizes="100vw"
-					className="object-cover opacity-25"
+					className="object-cover opacity-30"
 				/>
-				<div className="absolute inset-0 bg-gradient-to-b from-base/70 via-base/88 to-base" />
-				<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(165,99,0,0.12),transparent_60%)]" />
+				<div className="absolute inset-0 bg-gradient-to-b from-base/65 via-base/85 to-base" />
+				<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(165,99,0,0.16),transparent_55%),radial-gradient(ellipse_at_top_right,rgba(25,99,128,0.14),transparent_55%),radial-gradient(circle_at_bottom,rgba(201,51,58,0.12),transparent_50%)]" />
 				<MotifField />
+				<Confetti />
 				<Container className="relative grid gap-10 py-20 sm:py-28 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
 					<div className="reveal">
 						<p className="flex flex-wrap items-center gap-x-3 gap-y-1 font-display text-sm uppercase tracking-[0.22em] text-amber">
@@ -152,7 +156,9 @@ export default function HomePage() {
 										key={i}
 										className="flex items-center gap-10"
 									>
-										<IconStar className="h-4 w-4 text-coral" />
+										<IconStar
+											className={`h-4 w-4 ${MARQUEE_TONE[i % MARQUEE_TONE.length]}`}
+										/>
 										{c}
 									</li>
 								))}
@@ -225,7 +231,9 @@ export default function HomePage() {
 											placeholder="blur"
 											className="object-cover transition-transform duration-500 group-hover:scale-105"
 										/>
-										<span className="absolute left-3 top-3 rounded-full bg-ink/80 px-2.5 py-1 font-display text-[11px] uppercase tracking-[0.16em] text-coral">
+										<span
+											className={`absolute left-3 top-3 rounded-full bg-ink/80 px-2.5 py-1 font-display text-[11px] uppercase tracking-[0.16em] ${kindTone[p.kind]}`}
+										>
 											{p.kind}
 										</span>
 									</div>
@@ -387,23 +395,27 @@ export default function HomePage() {
 			{/* ------------------------------------------------------ 북마크 CTA */}
 			<section className="py-24">
 				<Container>
-					<div className="reveal rounded-3xl border border-amber/40 bg-gradient-to-br from-card to-base p-10 text-center sm:p-14">
-						<h2 className="text-3xl font-black tracking-tight sm:text-4xl">
-							북마크 한 번, 세계인의 축제로.
-						</h2>
-						<p className="mx-auto mt-4 max-w-xl text-ink/70">
-							이 페이지를 저장하고 공유해 주세요. D-day 알림,
-							프로그램표, 오시는 길이 앱처럼 열립니다.
-						</p>
-						<div className="mt-8 flex flex-col items-center gap-4">
-							<SaveButton />
-							<ShareBar className="justify-center" />
-							<Link
-								href="/bookmark"
-								className="text-sm font-bold text-amber hover:underline"
-							>
-								QR·배경화면·홈 화면 추가 안내 →
-							</Link>
+					<div className="reveal relative overflow-hidden rounded-3xl border border-amber/40 bg-gradient-to-br from-card to-base p-10 text-center sm:p-14">
+						<Confetti count={14} />
+						<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(165,99,0,0.12),transparent_60%)]" />
+						<div className="relative">
+							<h2 className="text-3xl font-black tracking-tight sm:text-4xl">
+								북마크 한 번, 세계인의 축제로.
+							</h2>
+							<p className="mx-auto mt-4 max-w-xl text-ink/70">
+								이 페이지를 저장하고 공유해 주세요. D-day 알림,
+								프로그램표, 오시는 길이 앱처럼 열립니다.
+							</p>
+							<div className="mt-8 flex flex-col items-center gap-4">
+								<SaveButton />
+								<ShareBar className="justify-center" />
+								<Link
+									href="/bookmark"
+									className="text-sm font-bold text-amber hover:underline"
+								>
+									QR·배경화면·홈 화면 추가 안내 →
+								</Link>
+							</div>
 						</div>
 					</div>
 				</Container>

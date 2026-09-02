@@ -4,7 +4,8 @@ import { Countdown } from "@/components/Countdown";
 import { InstallPrompt } from "@/components/InstallPrompt";
 import { SaveButton } from "@/components/share";
 import { Mascot } from "@/components/Mascot";
-import { festival, programs } from "@/lib/festival";
+import { Confetti } from "@/components/Motifs";
+import { festival, kindTone, programs } from "@/lib/festival";
 import { photos } from "@/lib/photos";
 
 export default function AppHome() {
@@ -24,6 +25,8 @@ export default function AppHome() {
 					className="object-cover opacity-25"
 				/>
 				<div className="absolute inset-0 bg-gradient-to-b from-base/75 via-base/85 to-base" />
+				<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(165,99,0,0.16),transparent_55%),radial-gradient(circle_at_bottom,rgba(25,99,128,0.12),transparent_55%)]" />
+				<Confetti count={16} />
 				<div className="relative">
 					<Mascot className="mx-auto h-32 w-28" />
 					<p className="mt-3 text-sm text-ink/70">
@@ -58,7 +61,9 @@ export default function AppHome() {
 							key={p.slug}
 							className="rounded-2xl border border-ink/12 bg-card p-4"
 						>
-							<span className="font-display text-[11px] uppercase tracking-[0.16em] text-coral">
+							<span
+								className={`font-display text-[11px] uppercase tracking-[0.16em] ${kindTone[p.kind]}`}
+							>
 								{p.kind}
 							</span>
 							<h3 className="mt-1 font-bold">{p.nameKo}</h3>

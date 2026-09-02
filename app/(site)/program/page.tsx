@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Container, PageHero, SectionHeading } from "@/components/ui";
-import { festival, programs, type Program } from "@/lib/festival";
+import { festival, kindDot, programs, type Program } from "@/lib/festival";
 import { photos } from "@/lib/photos";
 
 export const metadata: Metadata = {
@@ -63,10 +63,12 @@ export default function ProgramPage() {
 						title="8일 한눈에 보기"
 					/>
 					<ol className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-						{DAYS.map((day) => (
+						{DAYS.map((day, i) => (
 							<li
 								key={day.d}
-								className="reveal rounded-xl border border-ink/12 bg-card p-4"
+								className={`reveal rounded-xl border border-ink/12 border-l-2 bg-card p-4 ${
+									["border-l-coral/60", "border-l-amber/60", "border-l-lake/60"][i % 3]
+								}`}
 							>
 								<div className="flex items-baseline justify-between">
 									<span className="font-display text-sm text-amber">
@@ -92,7 +94,11 @@ export default function ProgramPage() {
 						if (!list.length) return null;
 						return (
 							<div key={kind} className="mb-14 last:mb-0">
-								<h2 className="font-display text-xl uppercase tracking-[0.16em] text-amber">
+								<h2 className="flex items-center gap-2.5 font-display text-xl uppercase tracking-[0.16em] text-amber">
+									<span
+										aria-hidden
+										className={`h-3 w-3 rounded-full bg-current ${kindDot[kind]}`}
+									/>
 									{kind}
 								</h2>
 								<ul className="mt-6 grid gap-5 md:grid-cols-2">

@@ -167,6 +167,26 @@ export const programs: Program[] = [
 	},
 ];
 
+/** 프로그램 성격별 포인트 컬러 (어두운 칩 위에서 읽히는 원색) */
+export const kindTone: Record<Program["kind"], string> = {
+	"개·폐막": "text-coral",
+	대표: "text-amber",
+	"거리·난장": "text-lake",
+	국제초청: "text-lake",
+	체험: "text-amber",
+	상설: "text-paper/70",
+};
+
+/** 밝은 배경에서 쓰는 성격별 점 컬러 */
+export const kindDot: Record<Program["kind"], string> = {
+	"개·폐막": "text-coral",
+	대표: "text-amber",
+	"거리·난장": "text-lake",
+	국제초청: "text-lake",
+	체험: "text-amber",
+	상설: "text-ink/40",
+};
+
 /** 홍보 카피 뱅크 */
 export const copyBank = [
 	"손끝으로 말하고, 눈빛으로 듣는다.",
